@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Loan</title>
+    <style>
+        body {
+            background-color: #392424; /* Set your desired background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Make sure the body takes the full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+
+        form {
+            background-color: #ffffff4c; /* Set your desired form background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50; /* Set your desired button color */
+            color: #ffffff; /* Set your desired button text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Set your desired button color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/form_fill">
+        <h2>Apply for Loan</h2>
+        <label for="loan_type">Select Loan Type:</label>
+        <select id="loan_type" name="loan_type" required>
+            <option value="education">Housing Loan</option>
+            <option value="home">Vehicle Loan</option>
+            <option value="vehicle">Mortgage Loan</option>
+            <option value="vehicle">Education Loan</option>
+            <option value="vehicle">Gold Loan</option>
+        </select><br>
+
+        <input type="submit" value="Proceed">
+    </form>
+</body>
+</html>

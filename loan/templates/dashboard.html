@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Analysis Dashboard</title>
+    <style>
+        html{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Loan Analysis Dashboard</h1>
+    <div>
+        <h2>Box Plot of Loan Amount by Credit History</h2>
+        <img src="data:image/png;base64,{{ chart_url_box }}" alt="Box Plot">
+    </div>
+
+    <div>
+        <h2>Heatmap of Dependents vs. Credit History</h2>
+        <img src="data:image/png;base64,{{ chart_url_heatmap }}" alt="Heatmap">
+    </div>
+
+    <div>
+        <h2>Scatter Plot of Dependents vs. Credit History</h2>
+        <img src="data:image/png;base64,{{ chart_url_scatter }}" alt="Scatter Plot">
+    </div>
+
+    <div>
+        <h2>Pie Chart of Approved loans by Gender</h2>
+        <img src="data:image/png;base64,{{ chart_url_pie }}" alt="Pie Chart">
+    </div>
+
+    <div>
+        <h2>Pie Chart of Not Approved loans by Gender</h2>
+        <img src="data:image/png;base64,{{ chart_url_pie_not_approved  }}" alt="Pie Chart">
+    </div>
+
+    <div>
+        <h2>Violin Plot of Dependents vs. Credit History</h2>
+        <img src="data:image/png;base64,{{ chart_url_violin }}" alt="Pie Chart">
+    </div>
+
+    <div>
+        <h2>Distribution plot of applicantincome vs. coapplicantincome</h2>
+        <img src="data:image/png;base64,{{ chart_url_dist }}" alt="Pie Chart">
+    </div>
+
+    <div>
+        <h2>Density plot of dependents vs.applicantincome </h2>
+        <img src="data:image/png;base64,{{ chart_url_density }}" alt="Density Plot">
+    </div>
+
+    <div>
+        <h2>Stacked Bar Chart of dependents vs.applicantincome </h2>
+        <img src="data:image/png;base64,{{ chart_url_stacked_bar}}" alt="Stacked Bar Chart">
+    </div>
+
+    <div>
+        <h2>Stacked Bar Plot of Coapplicant Income by Dependents</h2>
+        <img src="data:image/png;base64,{{ chart_url_stacked_bar_coapplicant }}" alt="Stacked Bar Plot Coapplicant">
+    </div>
+
+    <div>
+        <h2>Bar Chart of Education by Credit History</h2>
+        <img src="data:image/png;base64,{{ chart_url_bar }}" alt="Bar Chart">
+    </div>
+
+    <div>
+        <h2>Histogram of Loan Amount by Gender</h2>
+        <img src="data:image/png;base64,{{ chart_url_histogram }}" alt="Histogram">
+    </div>
+
+    <div>
+        <h2>Correlogram of Applicant Income and Loan Amount</h2>
+        <img src="data:image/png;base64,{{ chart_url_correlogram }}" alt="Correlogram">
+    </div>
+    
+
+
+
+</body>
+</html>

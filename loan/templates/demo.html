@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 600vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(28, 22, 22, 0.1);
+      width: 300px; /* Adjust the width as needed */
+    }
+
+    div {
+      margin-bottom: 15px;
+      text-align: center; /* Center text within each div */
+    }
+
+    label {
+      display: inline-block;
+      width: 150px; /* Adjust the width as needed */
+      text-align: left; /* Align label text to the left */
+    }
+
+    select,
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/form_fill" method="post">
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="married">Marital Status:</label>
+      <select id="married" name="married">
+        <option value="Married">Married</option>
+        <option value="Single">Single</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="dependents">Dependents:</label>
+      <input type="text" id="dependents" name="dependents">
+    </div>
+
+    <div>
+      <label for="education">Education:</label>
+      <select id="education" name="education">
+        <option value="No formal Education">No formal Education</option>
+        <option value="SSLC">SSLC</option>
+        <option value="PUC">PUC</option>
+        <option value="Degree">Degree</option>
+        <option value="Doctrate or Higher">Doctrate or Higher</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="self_employed">Self Employed:</label>
+      <select id="self_employed" name="self_employed">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="applicantincome">Applicant Income:</label>
+      <input type="text" id="applicantincome" name="applicantincome">
+    </div>
+
+    <div>
+      <label for="coapplicantincome">Coapplicant Income:</label>
+      <input type="text" id="coapplicantincome" name="coapplicantincome">
+    </div>
+
+    <div>
+      <label for="loanamount">Loan Amount:</label>
+      <input type="text" id="loanamount" name="loanamount">
+    </div>
+
+    <div>
+      <label for="loanamountterm">Loan Amount Term:</label>
+      <select id="loanamountterm" name="loanamountterm">
+        <option value="<2 years">&lt;2 years</option>
+        <option value=">2years">>2 years</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="credithistory">CIBIL Score:</label>
+      <input type="text" id="credithistory" name="credithistory" required>
+    </div>
+
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <div>
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+
+  {% if success_message %}
+    <div class="message success">
+      {{ success_message }}
+    </div>
+  {% endif %}
+  {% if error_message %}
+    <div class="message error">
+      {{ error_message }}
+    </div>
+  {% endif %}
+
+</body>
+</html>

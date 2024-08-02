@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Application Form</title>
+  <style>
+    body {
+            background-color: rgb(22, 72, 77); /* Set your desired background color */
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            height: 100vh; /* Make sure the body takes the full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+        .box{
+          margin-top: 30px;
+          display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    label {
+      display: inline-block;
+      width: 200px; /* Adjust the width as needed */
+    }
+    input[type=text]{
+      /* border: none; */
+      border-bottom: rgb(0, 0, 0);
+      
+    }
+    select{
+      margin-bottom: 10px;
+      width: 257px;
+      height: 35px;
+      border: none;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      background-color: rgba(255, 255, 255, 0);
+    }
+    input{
+      border: none;
+      background-color: #ffffff00;
+      border-bottom: #5f0101;
+      width: 250px;
+      height: 35px;
+      margin-bottom: 10px;
+
+    }
+    form{
+      border-radius: 5px;
+      /* border: 2px solid red; */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.332);
+    }
+    button{
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      float: right;
+      margin-right: 5px;
+      background-color: rgb(10, 39, 42);
+      color: white;
+      border: none;
+      border-radius: 5px;
+
+    }
+    nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+        .design{
+          border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        #applicantincome{
+          border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        #dependents{
+          border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        #applicantincome{
+          border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        #coapplicantincome{
+          border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        #loanamount{
+          border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        #credithistory{
+          border-bottom: 1px solid rgb(0, 0, 0);
+
+        }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+</nav>
+
+<div class="box">
+  <form action="/form_fill" method="post">
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="Male" >Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="married">Marital Status:</label>
+      <select id="married" name="married">
+        <option value="Married">Married</option>
+        <option value="Single">Single</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="dependents">Dependents:</label>
+      <input type="text" id="dependents" name="dependents" class="design">
+    </div>
+
+    <div>
+      <label for="education">Education:</label>
+      <select id="education" name="education">
+        <option value="No formal Education">No formal Education</option>
+        <option value="SSLC">SSLC</option>
+        <option value="PUC">PUC</option>
+        <option value="Degree">Degree</option>
+        <option value="Doctrate or Higher">Doctrate or Higher</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="self_employed">Self Employed:</label>
+      <select id="self_employed" name="self_employed">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="applicantincome">Applicant Income:</label>
+      <input type="text" class="design" id="applicantincome" name="applicantincome">
+    </div>
+
+    <div>
+      <label for="coapplicantincome">Coapplicant Income:</label>
+      <input type="text" class="design" id="coapplicantincome" name="coapplicantincome">
+    </div>
+
+    <div>
+      <label for="loanamount">Loan Amount:</label>
+      <input type="text" class="design" id="loanamount" name="loanamount">
+    </div>
+
+    <div>
+      <label for="loanamountterm">Loan Amount Term:</label>
+      <select id="loanamountterm" name="loanamountterm">
+        <option value="<2 years">&lt;2 years</option>
+        <option value=">2years">>2 years</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="credithistory">CIBIL Score:</label>
+      <input type="text" class="design" id="credithistory" name="credithistory" required>
+    </div>
+
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" class="design" id="date" name="date" required>
+    </div>
+
+    <div>
+      <button type="submit">Upload</button>
+    </div>
+    {% if success_message %}
+  <div style="color: green; font-weight: bold;">
+    {{ success_message }}
+  </div>
+{% endif %}
+{% if error_message %}
+  <div style="color: rgb(249, 0, 0); font-weight: bold;">
+    {{ error_message }}
+  </div>
+{% endif %}
+  </form>
+
+  <!-- {% if success_message %}
+  <div style="color: green; font-weight: bold;">
+    {{ success_message }}
+  </div>
+{% endif %}
+{% if error_message %}
+  <div style="color: burlywood; font-weight: bold;">
+    {{ error_message }}
+  </div>
+{% endif %} -->
+</div>
+</body>
+</html>
